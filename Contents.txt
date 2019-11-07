@@ -1,0 +1,48 @@
+ Nov - 8 ==Nested interfaces of WebDriver
+
+Maxiize and Miniize the window size
+Navigate back and forth  using Selenium
+
+Synchronization
+
+Capture Screenshots using Selenium
+Java Script Execution
+
+Action Class = Keyboard and Mouse Moments using Selenium
+
+FrameWorks
+
+TestNG
+Maven
+Data Driven
+KeyWord Driven
+Page Object Model
+Hybrid FrameWorks
+Cucumber - BDD
+
+SELENIUM  - IDE
+
+Devops
+
+CICD
+Jenkins 
+GIT
+
+DataBase --- JDBC
+
+
+==== REST API - Testing and Automation ========
+
+Devops
+
+Selenium - Python
+
+Selenium ----> using NodeJs/ typescript
+
+
+
+
+
+
+
+

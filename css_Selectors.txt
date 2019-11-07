@@ -1,0 +1,37 @@
+id = #
+class = .
+
+syntax = tagname[attName='attValue']
+
+Ex:
+
+input[id='username']  or input#username   or #username 
+----------
+td[class=keepLoggedIn]  or td.keepLoggedIn
+----------
+input[name='remember']
+----------
+input#username.textField
+----------
+input[id='username'][class='textField']
+----------
+
+
+Navigating between parent and child
+
+td#copyRight>nobr>a  OR td copyRight nobr a
+
+For indexing
+
+table.footer tbody tr td:nth-child(2)
+
+To go to Last Child
+--------------
+table.footer tbody tr td:last-child
+
+
+first child
+---------
+table.footer tbody tr td:first-child
+
+
