@@ -1,0 +1,88 @@
+package com.selenium;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+public class Nov_13_MultipleWindowAndFrameHandling extends BaseClass{
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		frameHandling();
+	}
+	
+	public static void multipleWindowHandle1() throws InterruptedException
+	{
+		launchBrowser();		
+		driver.findElement(By.linkText("actiTIME Inc.")).click();
+		
+		Thread.sleep(2000);
+		
+		Set<String> windows = driver.getWindowHandles();		
+		Iterator<String> itr = windows.iterator();	
+		
+		String firstWindowId =  itr.next();		
+		String secondWIndowId = itr.next();		
+
+		driver.switchTo().window(secondWIndowId);
+		
+		System.out.println(driver.getTitle());
+		
+		driver.close();
+		
+		Thread.sleep(2000);
+		
+		driver.switchTo().window(firstWindowId);
+		
+		System.out.println(driver.getTitle());
+		
+		driver.quit();	
+		
+		
+		
+	}
+
+	
+	public static void frameHandling()
+	{
+		launchBrowser("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select_multiple");
+		
+		//Using name or id to switch to the frame
+		//driver.switchTo().frame("iframeResult");
+		
+		// Using index to switch to the frame
+		//driver.switchTo().frame(1);
+		
+		WebElement frame = driver.findElement(By.name("iframeResult"));
+		
+		// Using Webelement to swict to the fame
+		driver.switchTo().frame(frame);
+		
+		
+		
+		WebElement elemnt = driver.findElement(By.name("cars"));
+		
+		Select select = new Select(elemnt);
+		
+		select.selectByVisibleText("Volvo");
+		
+		select.selectByVisibleText("Audi");
+		
+		// To come back to the main windows Parent windows
+		driver.switchTo().defaultContent();
+		
+		System.out.println(driver.getTitle());
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+}
