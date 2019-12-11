@@ -10,6 +10,9 @@ import java.io.File;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import com.selenium.base.BaseClass;
@@ -17,19 +20,21 @@ import com.selenium.base.BaseClass;
 public class FileUploadAndAutoITRobot extends BaseClass{
 	
 	
-	//@Test
+	@Test
 	public static void fileUpoadExample1() throws IOException, InterruptedException
 	{
 		
 		driver.get("http://jkorpela.fi/forms/file.html");
+		WebElement text = driver.findElement(By.name("textline"));
 		
-		File f = new File("E:\\sample.bat");
 		
-		String s = f.getAbsolutePath();
+		text.click();
 		
-		System.out.println(s);
+		Actions action = new Actions(driver);
 		
-		//driver.findElement(By.name("datafile")).sendKeys("E:\\sample.bat");
+		action.sendKeys(text, Keys.TAB).perform();
+		
+		action.sendKeys(Keys.ENTER).perform();
 		
 		//String s1 = driver.findElement(By.name("datafile")).getAttribute("value");
 		
@@ -48,12 +53,15 @@ public class FileUploadAndAutoITRobot extends BaseClass{
 	}
 
 	
-	@Test
+	//@Test
 	public static void fileUpoadExampleRobotClass() throws IOException, InterruptedException, AWTException
 	{
 		
 		driver.get("http://jkorpela.fi/forms/file.html");
+		WebElement text = driver.findElement(By.name("textline"));
 		
+		
+		text.click();
 		
 		Thread.sleep(4000);
 		
